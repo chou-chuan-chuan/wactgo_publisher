@@ -94,7 +94,7 @@ main {
     padding: 20px;
 }
 
-/* 文章列表容器 */
+
 .blog-container {
     display: flex;
     flex-wrap: wrap;
@@ -102,7 +102,6 @@ main {
     justify-content: center;
 }
 
-/* ===== 文章卡片樣式 ===== */
 .blog-post {
     background: white;
     padding: 20px;
@@ -111,27 +110,28 @@ main {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
     max-width: 400px;
+    text-align: center;
 }
 
-/* 滑鼠懸停時放大卡片 */
-.blog-post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+/* 按鈕設計 */
+.blog-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: white;
+    background: lightgrey;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
-/* 文章標題 */
-.blog-post h2 {
-    color: #333;
-    cursor: pointer;
-    font-size: 1.2rem;
-    margin: 0;
-    transition: color 0.3s ease;
+.blog-btn:hover {
+    background: #0056b3;
 }
 
-.blog-post h2:hover {
-    color: #764ba2;
-    text-decoration: underline;
-}
+
+
 
 /* ===== 頁尾 Footer ===== */
 footer {
@@ -198,3 +198,172 @@ footer p {
     font-family: serif;
     color: white;
 }
+
+.text
+  /*border: solid 1px;*/
+  font-size: 1.5vw;
+  position: relative;
+  top: 10px;
+  font-family: cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 全局樣式 */
+body {
+    font-family: Lucida Calligraphy;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 主要容器 */
+.container {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* 圖片和文字間距 */
+    max-width: 1000px;
+    width: 90%;
+    background: white;
+    padding: 40px;
+    margin-bottom: 20px;
+    font-style: normal;
+    text-align: justify;
+    font-family: Lucida Calligraphy;
+}
+
+/* 左邊圖片區 */
+.image-container {
+    flex: 3; /* 佔 60% 的空間 */
+    max-width: 600px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* 右邊文字區 */
+.text-container {
+    flex: 2; /* 佔 40% 的空間 */
+}
+
+.text-container h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: black;
+    font-weight: bold;
+}
+
+/* 分隔線 */
+.divider {
+    width: 100%;
+    height: 2px;
+    background: black;
+    margin: 10px 0 20px;
+}
+
+.text-container h2 {
+    font-size: 1.4rem;
+    color: black;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.text-container h2 {
+    font-size: 1.2rem;
+    color: black;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.text-container p {
+    font-size: 1rem;
+    color: black;
+    margin-top: 10px;
+    line-height: 1.8;
+}
+
+/* 斜體和底線 */
+.text-container p em {
+    font-style: italic;
+    color: #444;
+}
+
+.text-container p u {
+    text-decoration: underline;
+    color: #333;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-container {
+        max-width: 100%;
+    }
+
+    .divider {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+/* 主要內容區 */
+main {
+    margin-top: 20px; /* 原本可能是 100px，現在縮小間距 */
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -54,7 +54,7 @@ header h1 {
     font-size: 4rem;
     font-family: serif;
     text-align: left; /* 讓內容靠左 */
-    padding-left: 650px; /* 增加左側間距 */
+    padding-left: 300px; /* 增加左側間距 */
     margin-top: 100px;
     margin-bottom: 100px;
 }

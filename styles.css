@@ -274,20 +274,20 @@ body {
 .image-container img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
     display: block;
 }
 
 /* 右邊文字區 */
 .text-container {
+    font-family: "辰宇落雁體",serif;
     flex: 2; /* 佔 40% 的空間 */
 }
 
 .text-container h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin: 0;
     color: black;
-    font-weight: bold;
+    font-weight: 550;
 }
 
 /* 分隔線 */
@@ -298,25 +298,28 @@ body {
     margin: 10px 0 20px;
 }
 
-.text-container h2 {
-    font-size: 1.4rem;
-    color: black;
-    margin: 10px 0;
-    font-weight: 600;
-}
 
 .text-container h2 {
-    font-size: 1.2rem;
+    font-size: 2.0rem;
     color: black;
     margin: 10px 0;
-    font-weight: 600;
+    font-weight: 400;
+}
+
+.text-container h3 {
+    font-size: 2.0rem;
+    font-weight: 700;
+    color: black;
+    margin-top: 0.1rem;
+    margin-bottom: 0.3rem;
+    line-height: 1;
 }
 
 .text-container p {
-    font-size: 1rem;
+    font-size: 1.8rem;
     color: black;
-    margin-top: 10px;
-    line-height: 1.8;
+    margin-top: 0.3rem;
+    line-height: 1;
 }
 
 /* 斜體和底線 */

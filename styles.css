@@ -1,6 +1,9 @@
+@import url("https://fontsapi.zeoseven.com/96/main/result.css");
+
 /* 全局樣式 */
 body {
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: "辰宇落雁體 Thin",serif;
+    font-weight: normal;
     margin: 0;
     padding: 0;
     background: #f4f4f9;
@@ -46,13 +49,15 @@ header h1,
 nav {
     position: relative;
     z-index: 1;
-    font-family: serif;
+    font-family: "辰宇落雁體 Thin",serif;
+    font-weight: normal;
 }
 
 header h1 {
     margin: 0;
-    font-size: 4rem;
-    font-family: serif;
+    font-size: 7rem;
+    font-family: "辰宇落雁體 Thin",serif;
+    font-weight: normal;
     text-align: center; /* 讓內容靠左 */
     margin-top: 100px;
     margin-bottom: 100px;
@@ -76,7 +81,7 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 2rem;
     padding: 8px 15px;
     border-radius: 5px;
     transition: background 0.3s ease;
@@ -192,9 +197,9 @@ footer p {
 
 /* LOGO 文字樣式 */
 .logo-text {
-    font-size: 1.2rem;
-    font-weight: bold;
-    font-family: serif;
+    font-family: "辰宇落雁體 Thin",serif;
+    font-size: 3rem;
+    font-weight: normal;
     color: white;
 }
 

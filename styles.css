@@ -1,8 +1,3 @@
-@import url("https://fontsapi.zeoseven.com/96/main/result.css");
-
-:root {
-  --ifm-font-family-base: "辰宇落雁體";
-}
 @font-face {
   font-family: '辰宇落雁體';
   src: url('ChenYuluoyan-2.0-Thin.ttf'); 
@@ -12,7 +7,7 @@
 
 /* 全局樣式 */
 body {
-    font-family: "辰宇落雁體 Thin",serif;
+    font-family: "辰宇落雁體",serif;
     font-weight: normal;
     margin: 0;
     padding: 0;
@@ -59,14 +54,14 @@ header h1,
 nav {
     position: relative;
     z-index: 1;
-    font-family: "辰宇落雁體 Thin",serif;
+    font-family: "辰宇落雁體",serif;
     font-weight: normal;
 }
 
 header h1 {
     margin: 0;
     font-size: 7rem;
-    font-family: "辰宇落雁體 Thin",serif;
+    font-family: "辰宇落雁體",serif;
     font-weight: normal;
     text-align: center; /* 讓內容靠左 */
     margin-top: 100px;
@@ -155,7 +150,7 @@ footer {
     padding: 1px;
     position: relative;
     overflow: hidden;
-    font-family: "辰宇落雁體 Thin",serif;
+    font-family: "辰宇落雁體",serif;
     font-weight: normal;
     font-size: 1.5rem;
 }
@@ -209,7 +204,7 @@ footer p {
 
 /* LOGO 文字樣式 */
 .logo-text {
-    font-family: "辰宇落雁體 Thin",serif;
+    font-family: "辰宇落雁體",serif;
     font-size: 3rem;
     font-weight: normal;
     color: white;

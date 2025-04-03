@@ -1,5 +1,15 @@
 @import url("https://fontsapi.zeoseven.com/96/main/result.css");
 
+:root {
+  --ifm-font-family-base: "辰宇落雁體";
+}
+@font-face {
+  font-family: '辰宇落雁體';
+  src: url('ChenYuluoyan-2.0-Thin.ttf'); 
+  font-display: swap;
+}
+
+
 /* 全局樣式 */
 body {
     font-family: "辰宇落雁體 Thin",serif;
@@ -145,7 +155,9 @@ footer {
     padding: 1px;
     position: relative;
     overflow: hidden;
-    font-family: serif;
+    font-family: "辰宇落雁體 Thin",serif;
+    font-weight: normal;
+    font-size: 1.5rem;
 }
 
 /* 確保 Footer 內的內容在遮罩之上 */
@@ -319,6 +331,12 @@ body {
 .text-container p u {
     text-decoration: underline;
     color: #333;
+}
+
+.literature-container {
+    font-family: '辰宇落雁體', serif;
+    font-weight: normal;
+    font-size: 2rem;
 }
 
 /* 響應式設計 */

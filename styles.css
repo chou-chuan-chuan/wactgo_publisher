@@ -228,10 +228,28 @@ footer p {
     font-size: 1.25rem;
 }
 
+.image-text-container {
+    display: flex;
+    align-items: firstbaseline;
+    gap: 40px; /* 圖片和文字間距 */
+    max-width: 1000px;
+    width: 90%;
+    background: white;
+    padding: 40px;
+    margin-bottom: 20px;
+    font-style: normal;
+    text-align: justify;
+    font-size: 1.25rem;
+}
+
 /* 左邊圖片區 */
 .image-container {
-    flex: 3; /* 佔 60% 的空間 */
+    flex: 2.3; /* 佔 60% 的空間 */
     max-width: 600px;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 1.4;
 }
 
 .image-container img {
@@ -247,7 +265,7 @@ footer p {
 }
 
 .text-container h1 {
-    font-size: 3rem;
+    font-size: 2.9rem;
     margin: 0;
     color: black;
     font-weight: 550;
@@ -263,14 +281,14 @@ footer p {
 
 
 .text-container h2 {
-    font-size: 2.0rem;
+    font-size: 1.9rem;
     color: black;
     margin: 10px 0;
     font-weight: 400;
 }
 
 .text-container h3 {
-    font-size: 2.0rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: black;
     margin-top: 0.1rem;
@@ -279,7 +297,7 @@ footer p {
 }
 
 .text-container p {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     color: black;
     margin-top: 0.3rem;
     line-height: 1;
@@ -318,7 +336,19 @@ footer p {
     }
 }
 
+.image-caption {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 1px;
+    text-align: center;
+    line-height: 1.4;
+}
 
+.image-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
 
 

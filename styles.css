@@ -370,30 +370,18 @@ main {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 .circle-gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .circle {
-  width: 5rem;
-  height: 5rem;
+  width: 3.93rem;
+  height: 3.93rem;
   border-radius: 50%;
   overflow: hidden;
   position: relative;

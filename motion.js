@@ -31,6 +31,3 @@ function stopHover(circle) {
     img.style.opacity = (i === 0) ? 1 : 0;
   });
 }
-
-
-

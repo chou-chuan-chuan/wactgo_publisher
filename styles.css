@@ -228,6 +228,20 @@ footer p {
     font-size: 1.25rem;
 }
 
+.image-container {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* 圖片和文字間距 */
+    max-width: 1000px;
+    width: 90%;
+    background: white;
+    padding: 40px;
+    margin-bottom: 20px;
+    font-style: normal;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
 .image-text-container {
     display: flex;
     align-items: firstbaseline;

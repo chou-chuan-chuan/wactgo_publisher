@@ -423,3 +423,35 @@ main {
 
 
 
+
+
+
+
+
+
+
+
+/* this is game zone*/ 
+
+
+canvas {
+  border: 1px solid black;
+}
+
+#restartButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: lightgray;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#restartButton:hover {
+  background-color: black;
+  color: white;
+}
+
+/* this is game zone*/ 

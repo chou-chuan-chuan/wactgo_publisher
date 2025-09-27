@@ -60,7 +60,7 @@ nav {
 
 header h1 {
     margin: 0;
-    font-size: 7rem;
+    font-size: clamp(2.5rem, 8vw, 7rem);
     font-family: "辰宇落雁體",serif;
     font-weight: normal;
     text-align: center; /* 讓內容靠左 */

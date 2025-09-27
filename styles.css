@@ -168,13 +168,15 @@ footer p {
     main {
         margin: 60px auto 20px;
         padding: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     .container, .solo-image-container, .image-text-container {
         width: 100%;
         padding: 20px;
     }
-    
+
     .container {
         flex-direction: column;
         text-align: center;

@@ -172,17 +172,13 @@ footer p {
         padding-right: 15px;
     }
 
-    .container, .solo-image-container, .image-text-container {
-        width: 100%;
-        padding: 20px;
-    }
-
-    .container {
+    .container, .solo-image-container, .image-text-container, .image-container  {
         flex-direction: column;
         text-align: center;
-    }
-
-    .image-container {
+        width: 100%;
+        padding: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
         max-width: 100%;
     }
 

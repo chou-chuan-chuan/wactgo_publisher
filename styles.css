@@ -434,6 +434,7 @@ main {
 /* this is game zone*/ 
 
 .game-wrapper {
+    touch-action: none; /* 只禁止遊戲區塊的滑動 */
     display: flex;
     justify-content: center;  /* 水平置中 */
     align-items: center;      /* 垂直置中 */

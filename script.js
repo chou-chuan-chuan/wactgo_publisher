@@ -131,12 +131,14 @@ let touchStartX = 0;
 let touchStartY = 0;
 
 canvas.addEventListener("touchstart", e => {
+  e.preventDefault(); // 阻止瀏覽器捲動
   const touch = e.touches[0];
   touchStartX = touch.clientX;
   touchStartY = touch.clientY;
 });
 
 canvas.addEventListener("touchend", e => {
+  e.preventDefault(); // 阻止瀏覽器捲動
   const touch = e.changedTouches[0];
   const dx = touch.clientX - touchStartX;
   const dy = touch.clientY - touchStartY;

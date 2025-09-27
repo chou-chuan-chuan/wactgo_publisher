@@ -67,6 +67,7 @@ function checkCollision() {
 }
 
 function drawFood() {
+  ctx.imageSmoothingEnabled = true;  // 保持平滑縮小
   ctx.drawImage(foodImg, food.x * gridSize, food.y * gridSize, gridSize, gridSize);
 }
 

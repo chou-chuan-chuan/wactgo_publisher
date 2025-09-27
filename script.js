@@ -95,7 +95,7 @@ function restartGame() {
 
 function updateScore() {
   document.getElementById("scoreBoard").textContent =
-    "分數：" + score + " | 最高分：" + highScore;
+    "分數：" + score + "\xa0\xa0\xa0\xa0\xa0\xa0\xa0最高分：" + highScore;
 }
 
 // 📌 控制方向（共用）

@@ -10,17 +10,21 @@ let snake = [{ x: 10, y: 10 }];
 let velocity = { x: 0, y: 0 };
 let food = { x: Math.floor(Math.random() * tileCount), y: Math.floor(Math.random() * tileCount) };
 let score = 0;
+let highScore = 0;
 let gameInterval;
 
-
+// 食物圖片
 const foodImg = new Image();
-foodImg.src = "c.jpg";       // 建立一個img物件
+foodImg.src = "c.jpg";
 
-
+// 遊戲主迴圈
 function drawGame() {
   moveSnake();
+
   if (checkCollision()) {
-    alert("Game Over! Your score: " + score);
+    if (score > highScore) highScore = score;
+    updateScore();
+    alert("Game Over! 你的分數：" + score);
     clearInterval(gameInterval);
     return;
   }
@@ -29,6 +33,8 @@ function drawGame() {
     score++;
     snake.push({});
     placeFood();
+    if (score > highScore) highScore = score;
+    updateScore();
   }
 
   ctx.fillStyle = "white";
@@ -53,17 +59,10 @@ function moveSnake() {
 
 function checkCollision() {
   const head = snake[0];
-
-  if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount) {
-    return true;
-  }
-
+  if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount) return true;
   for (let i = 1; i < snake.length; i++) {
-    if (snake[i].x === head.x && snake[i].y === head.y) {
-      return true;
-    }
+    if (snake[i].x === head.x && snake[i].y === head.y) return true;
   }
-
   return false;
 }
 
@@ -85,41 +84,76 @@ function resetGame() {
   velocity = { x: 0, y: 0 };
   score = 0;
   placeFood();
+  updateScore();
 }
 
 function restartGame() {
   clearInterval(gameInterval);
   resetGame();
-  gameInterval = setInterval(drawGame, 100);
+  gameInterval = setInterval(drawGame, 120);
 }
 
-document.addEventListener("keydown", event => {
-  switch (event.key) {
-    case "ArrowUp":
-    case "ArrowDown":
-    case "ArrowLeft":
-    case "ArrowRight":
-      event.preventDefault(); // 阻止頁面捲動
-      break;
-  }
+function updateScore() {
+  document.getElementById("scoreBoard").textContent =
+    "分數：" + score + " | 最高分：" + highScore;
+}
 
-  switch (event.key) {
-    case "ArrowUp":
+// 📌 控制方向（共用）
+function setDirection(dir) {
+  switch (dir) {
+    case "up":
       if (velocity.y === 0) velocity = { x: 0, y: -1 };
       break;
-    case "ArrowDown":
+    case "down":
       if (velocity.y === 0) velocity = { x: 0, y: 1 };
       break;
-    case "ArrowLeft":
+    case "left":
       if (velocity.x === 0) velocity = { x: -1, y: 0 };
       break;
-    case "ArrowRight":
+    case "right":
       if (velocity.x === 0) velocity = { x: 1, y: 0 };
       break;
   }
+}
+
+// 📌 鍵盤控制
+document.addEventListener("keydown", event => {
+  switch (event.key) {
+    case "ArrowUp": setDirection("up"); event.preventDefault(); break;
+    case "ArrowDown": setDirection("down"); event.preventDefault(); break;
+    case "ArrowLeft": setDirection("left"); event.preventDefault(); break;
+    case "ArrowRight": setDirection("right"); event.preventDefault(); break;
+  }
 });
 
-gameInterval = setInterval(drawGame, 100);
+// 📌 觸控滑動控制
+let touchStartX = 0;
+let touchStartY = 0;
+
+canvas.addEventListener("touchstart", e => {
+  const touch = e.touches[0];
+  touchStartX = touch.clientX;
+  touchStartY = touch.clientY;
+});
+
+canvas.addEventListener("touchend", e => {
+  const touch = e.changedTouches[0];
+  const dx = touch.clientX - touchStartX;
+  const dy = touch.clientY - touchStartY;
+
+  if (Math.abs(dx) > Math.abs(dy)) {
+    // 左右滑
+    if (dx > 30) setDirection("right");
+    else if (dx < -30) setDirection("left");
+  } else {
+    // 上下滑
+    if (dy > 30) setDirection("down");
+    else if (dy < -30) setDirection("up");
+  }
+});
+
+gameInterval = setInterval(drawGame, 120);
+
 
 /* this is game zone*/ 
 

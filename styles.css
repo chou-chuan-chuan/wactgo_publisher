@@ -370,7 +370,9 @@ canvas {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
+    font-family: '辰宇落雁體';
+
 }
 
 #restartButton:hover {

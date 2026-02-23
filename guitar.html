@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAO出版社 : GUITAR</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 導航列 -->
+    <header>
+        <div class="nav-container">
+            <!-- 左側 ICON + 文字 -->
+            <div class="logo">
+                <img src="LOGO.jpg" alt="Logo" class="logo-img">
+                <span class="logo-text">WACTGO</span>
+            </div>
+
+            <!-- 右側導航列 -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about_us.html">About</a></li>
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="subscription.html">Subscription</a></li>
+                </ul>
+            </nav>
+        </div>
+        <h1><i>GUITAR<i></h1>
+    </header>
+
+
+    <!-- 主要內容 -->
+    <main class="grid-container">
+        <div class="text-container">
+            <h2>Click the song you like!</h2>
+            <h1 class="click-trigger" onclick="toggleImage('song1')">刻在我心底的名字</h1>
+            <img id="song1" src="guitar_刻在我心底的名字.jpg" class="hidden-guitar-img">
+            <div class="divider"></div>
+            <p>Your Name Engraved Herein...</p>
+        </div>
+
+        <div class="text-container">
+            <h2>&nbsp;</h2> 
+            <h1 class="click-trigger" onclick="toggleImage('song2')">Perfect</h1>
+            <img id="song2" src="guitar_Perfect.jpg" class="hidden-guitar-img">
+            <div class="divider"></div>
+            <p>Ed Sheeran...</p>
+        </div>
+
+        <div class="text-container">
+            <h1 class="click-trigger" onclick="toggleImage('song3')">刻在我心底的名字</h1>
+            <img id="song3" src="guitar_刻在我心底的名字.jpg" class="hidden-guitar-img">
+            <div class="divider"></div>
+            <p>It's been ten years...</p>
+        </div>
+
+        <div class="text-container">
+            <h1 class="click-trigger" onclick="toggleImage('song4')">Perfect</h1>
+            <img id="song4" src="guitar_Perfect.jpg" class="hidden-guitar-img">
+            <div class="divider"></div>
+            <p>It's been ten years...</p>
+        </div>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>Copyright 2025 — WACTGO 出版社 &emsp; © All rights reserved.</p>
+    </footer>
+
+    <script>
+    function toggleImage(imageId) {
+        // We use the imageId variable passed from the HTML
+        var img = document.getElementById(imageId);
+        
+        if (img.style.display === "none" || img.style.display === "") {
+            img.style.display = "block";
+        } else {
+            img.style.display = "none";
+        }
+    }
+    </script>
+
+</body>
+</html>
+

@@ -381,3 +381,40 @@ canvas {
 }
 
 /* this is game zone*/ 
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container for the two columns */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+    gap: 40px;                      /* Space between columns */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Base styling for the hidden images */
+.hidden-guitar-img {
+    display: none; 
+    width: 100%; 
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Mobile check: Stack them on top of each other if the screen is small */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}

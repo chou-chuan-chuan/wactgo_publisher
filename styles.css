@@ -574,22 +574,17 @@ footer p {
 .score-submission {
     box-sizing: border-box;
     width: min(100%, 400px);
-    margin-top: 24px;
+    margin: 24px auto 0;
     padding-top: 20px;
     border-top: 1px solid #dedad4;
     color: #292724;
     font-family: '辰宇落雁體', serif;
-    text-align: left;
+    line-height: 1.4;
+    text-align: center;
 }
 
 .score-submission[hidden] {
     display: none;
-}
-
-.tetris-game .score-submission {
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
 }
 
 .score-submission h3,
@@ -602,15 +597,21 @@ footer p {
     font-size: 1.25rem;
 }
 
+.score-submission form {
+    width: 100%;
+}
+
 .score-submission label {
     display: block;
     margin-bottom: 5px;
+    text-align: left;
 }
 
 .score-submit-controls {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 8px;
+    width: 100%;
 }
 
 .score-submit-controls input {
@@ -647,6 +648,7 @@ footer p {
     min-height: 1.35em;
     margin-top: 8px !important;
     color: #5f5a54;
+    text-align: center;
 }
 
 /* Shared Snake / Tetris leaderboard. */

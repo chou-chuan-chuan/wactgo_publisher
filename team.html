@@ -29,7 +29,7 @@
                 </ul>
             </nav>
         </div>
-        <h1><i>TEAM<i></h1>
+        <h1><i>TEAM</i></h1>
     </header>
 
 
@@ -124,14 +124,57 @@
 
 
         <!-- Game Zone -->
+        <section class="game-card snake-game" id="snakeGame" tabindex="0" aria-labelledby="snakeTitle">
+            <div class="game-heading">
+                <p class="game-kicker">GAME 01</p>
+                <h2 class="game-title" id="snakeTitle">SNAKE</h2>
+                <p class="game-focus-hint">點擊遊戲區後使用方向鍵</p>
+            </div>
+            <p class="game-stats" id="scoreBoard" aria-live="polite">分數：0 &emsp; 最高分：0</p>
+            <canvas class="game-canvas snake-canvas" id="gameCanvas" width="400" height="400" aria-label="貪吃蛇遊戲棋盤"></canvas>
+            <p class="game-instructions">方向鍵移動・手機可在棋盤上滑動</p>
+            <button class="game-button" id="restartButton" type="button">再玩一次</button>
+        </section>
 
-        <div class="game-wrapper">
-            <h2 id="scoreBoard">分數：0 &emsp; 最高分：0</h2>
-            <canvas id="gameCanvas" width="400" height="400"></canvas>
-            <button id="restartButton" onclick="restartGame()">再玩一次</button>
-            <script src="script.js"></script>  
-        </div>
-        
+        <section class="game-card tetris-game" id="tetrisGame" tabindex="0" aria-labelledby="tetrisTitle">
+            <div class="game-heading">
+                <p class="game-kicker">GAME 02</p>
+                <h2 class="game-title" id="tetrisTitle">TETRIS</h2>
+                <p class="game-focus-hint">點擊遊戲區後使用鍵盤</p>
+            </div>
+
+            <div class="tetris-layout">
+                <div class="tetris-board-wrap">
+                    <canvas class="game-canvas tetris-canvas" id="tetrisCanvas" width="300" height="600" aria-label="10 乘 20 俄羅斯方塊棋盤"></canvas>
+                </div>
+
+                <aside class="tetris-panel" aria-label="俄羅斯方塊遊戲資訊">
+                    <div class="next-piece">
+                        <p class="tetris-label">NEXT</p>
+                        <canvas id="nextCanvas" width="120" height="120" aria-label="下一個方塊預覽"></canvas>
+                    </div>
+                    <dl class="tetris-stats" aria-live="polite">
+                        <div><dt>SCORE</dt><dd id="tetrisScore">0</dd></div>
+                        <div><dt>LINES</dt><dd id="tetrisLines">0</dd></div>
+                        <div><dt>LEVEL</dt><dd id="tetrisLevel">1</dd></div>
+                    </dl>
+                    <button class="game-button" id="tetrisPauseButton" type="button">暫停</button>
+                    <button class="game-button game-button-dark" id="tetrisRestartButton" type="button">開始遊戲</button>
+                </aside>
+            </div>
+
+            <div class="tetris-touch-controls" aria-label="俄羅斯方塊觸控操作">
+                <button type="button" data-tetris-action="left" aria-label="向左">←</button>
+                <button type="button" data-tetris-action="rotate" aria-label="順時針旋轉">↻</button>
+                <button type="button" data-tetris-action="right" aria-label="向右">→</button>
+                <button type="button" data-tetris-action="down" aria-label="向下">↓</button>
+                <button class="touch-drop" type="button" data-tetris-action="drop">DROP</button>
+            </div>
+
+            <p class="game-instructions tetris-instructions">
+                ← → 移動・↓ Soft Drop・↑ / X 順時針旋轉・Z 逆時針旋轉・Space Hard Drop・P 暫停
+            </p>
+        </section>
         <!-- Game Zone -->
 
     </main>
@@ -141,6 +184,8 @@
         <p>Copyright 2025 — WACTGO 出版社 &emsp; © All rights reserved.</p>
     </footer>
 
+    <script src="script.js"></script>
+    <script src="tetris.js"></script>
     <script src="motion.js"></script>
 </body>
 </html>

@@ -86,7 +86,7 @@ nav ul li a:hover {
 /* ================= Main 主要內容區 ================= */
 main {
     max-width: 900px;
-    margin: 70px auto 70px;*/
+    margin: 70px auto;
 }
 
 /* Blog 區塊 */
@@ -338,49 +338,283 @@ footer p {
 
 
 
-/* this is game zone*/ 
-
-.game-wrapper {
-    touch-action: none; /* 只禁止遊戲區塊的滑動 */
-    display: flex;
-    justify-content: center;  /* 水平置中 */
-    align-items: center;      /* 垂直置中 */
-    height: 100vh;            /* 滿版高度 */    flex-direction: column;
-    background: white;
-    max-width: 1000px;
+/* ================= Team Game Zone ================= */
+.game-card {
+    box-sizing: border-box;
     width: 90%;
-    background: white;
-    padding: 40px;
-    margin-bottom: 20px;
+    max-width: 1000px;
+    margin: 40px 0 20px;
+    padding: clamp(24px, 5vw, 48px);
+    background: #fff;
+    border: 1px solid #d8d4ce;
+    color: #242321;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-#scoreBoard {
-  margin-bottom: 20px;
+.game-card:focus,
+.game-card:focus-within {
+    border-color: #4a4641;
+    box-shadow: 0 0 0 3px rgba(74, 70, 65, 0.12);
 }
 
-canvas {
-    border: 2px solid black;
+.game-heading {
+    text-align: center;
+    margin-bottom: 24px;
 }
 
-#restartButton {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: lightgray;
-    color: black;
-    border: none;
-    border-radius: 5px;
+.game-kicker,
+.game-focus-hint,
+.game-instructions,
+.tetris-label {
+    margin: 0;
+    letter-spacing: 0.08em;
+    color: #6d6861;
+}
+
+.game-kicker {
+    font-family: Georgia, serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+}
+
+.game-title {
+    margin: 2px 0 6px;
+    font-family: Georgia, serif;
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    font-weight: normal;
+    letter-spacing: 0.12em;
+}
+
+.game-focus-hint,
+.game-instructions {
+    font-size: 1.1rem;
+}
+
+.game-stats {
+    margin: 0 0 18px;
+    font-size: 1.45rem;
+    text-align: center;
+}
+
+.snake-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-canvas {
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid #2b2926;
+    background: #fbfaf6;
+}
+
+.snake-canvas {
+    width: min(100%, 400px);
+    height: auto;
+    aspect-ratio: 1;
+    touch-action: none;
+}
+
+.game-instructions {
+    margin-top: 16px;
+    text-align: center;
+    line-height: 1.35;
+}
+
+.game-button {
+    min-height: 44px;
+    margin-top: 18px;
+    padding: 9px 20px;
+    border: 1px solid #4d4944;
+    border-radius: 3px;
+    background: #e5e1db;
+    color: #252320;
     cursor: pointer;
-    font-size: 20px;
-    font-family: '辰宇落雁體';
-
+    font-family: '辰宇落雁體', serif;
+    font-size: 1.25rem;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
-#restartButton:hover {
-    background-color: black;
-    color: white;
+.game-button:hover,
+.game-button:focus-visible,
+.game-button-dark {
+    background: #2d2a27;
+    color: #fff;
 }
 
-/* this is game zone*/ 
+.game-button-dark:hover,
+.game-button-dark:focus-visible {
+    background: #514b45;
+}
+
+.tetris-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 300px) minmax(140px, 180px);
+    justify-content: center;
+    align-items: start;
+    gap: clamp(22px, 5vw, 52px);
+}
+
+.tetris-board-wrap {
+    min-width: 0;
+}
+
+.tetris-canvas {
+    width: min(100%, 300px);
+    height: auto;
+    aspect-ratio: 1 / 2;
+    touch-action: none;
+}
+
+.tetris-panel {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.next-piece {
+    padding-bottom: 18px;
+    border-bottom: 1px solid #d8d4ce;
+}
+
+.tetris-label,
+.tetris-stats dt {
+    font-family: Georgia, serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+}
+
+#nextCanvas {
+    display: block;
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    margin-top: 8px;
+    border: 1px solid #d8d4ce;
+    background: #fbfaf6;
+}
+
+.tetris-stats {
+    margin: 18px 0 0;
+}
+
+.tetris-stats div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 9px 0;
+    border-bottom: 1px solid #e5e1db;
+}
+
+.tetris-stats dd {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 1.2rem;
+}
+
+.tetris-panel .game-button {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.tetris-touch-controls {
+    display: none;
+    grid-template-columns: repeat(3, minmax(56px, 1fr));
+    gap: 8px;
+    width: min(100%, 300px);
+    margin: 18px auto 0;
+    touch-action: manipulation;
+}
+
+.tetris-touch-controls button {
+    min-height: 48px;
+    border: 1px solid #706a63;
+    border-radius: 3px;
+    background: #eeeae4;
+    color: #262421;
+    font-family: Georgia, serif;
+    font-size: 1.25rem;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.tetris-touch-controls button:active {
+    background: #b98652;
+    color: #fff;
+}
+
+.tetris-touch-controls .touch-drop {
+    grid-column: span 2;
+    background: #3b3732;
+    color: #fff;
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+}
+
+@media (max-width: 768px) {
+    .game-card {
+        width: 100%;
+        margin-top: 28px;
+        padding: 22px 16px 26px;
+    }
+
+    .tetris-layout {
+        grid-template-columns: minmax(0, 234px) minmax(92px, 112px);
+        gap: 12px;
+    }
+
+    .tetris-panel .game-button {
+        padding-inline: 8px;
+        font-size: 1.05rem;
+    }
+
+    .tetris-touch-controls {
+        display: grid;
+    }
+
+    .tetris-instructions {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 430px) {
+    .tetris-layout {
+        grid-template-columns: minmax(0, 2fr) minmax(76px, 1fr);
+        gap: 9px;
+    }
+
+    .next-piece {
+        padding-bottom: 10px;
+    }
+
+    .tetris-stats {
+        margin-top: 10px;
+    }
+
+    .tetris-stats div {
+        display: block;
+        padding: 5px 0;
+    }
+
+    .tetris-stats dd {
+        font-size: 1rem;
+    }
+
+    .tetris-panel .game-button {
+        min-height: 40px;
+        margin-top: 8px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (hover: none), (pointer: coarse) {
+    .tetris-touch-controls {
+        display: grid;
+    }
+}
 
 
 

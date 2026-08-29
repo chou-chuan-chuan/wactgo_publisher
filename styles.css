@@ -393,12 +393,13 @@ footer p {
 
 #gameCanvas {
     border: 2px solid black;
+    background: #fbfaf6;
 }
 
 #restartButton {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: lightgray;
+    background-color: #dfe3e8;
     color: black;
     border: none;
     border-radius: 5px;
@@ -407,9 +408,10 @@ footer p {
     font-family: '辰宇落雁體', serif;
 }
 
-#restartButton:hover {
-    background-color: black;
-    color: white;
+#restartButton:hover,
+#restartButton:focus-visible {
+    background-color: #c9d0d8;
+    color: black;
 }
 
 /* Tetris is fully scoped so it cannot restyle Snake. */
@@ -507,7 +509,7 @@ footer p {
 .tetris-game .tetris-button {
     margin-top: 10px;
     padding: 9px 14px;
-    background-color: lightgray;
+    background-color: #dfe3e8;
     color: black;
     border: none;
     border-radius: 5px;
@@ -518,8 +520,8 @@ footer p {
 
 .tetris-game .tetris-button:hover,
 .tetris-game .tetris-button:focus-visible {
-    background-color: black;
-    color: white;
+    background-color: #c9d0d8;
+    color: black;
 }
 
 .tetris-game .tetris-touch-controls {
@@ -535,7 +537,7 @@ footer p {
     min-height: 46px;
     border: none;
     border-radius: 5px;
-    background: lightgray;
+    background: #dfe3e8;
     color: black;
     font-family: '辰宇落雁體', serif;
     font-size: 1.15rem;
@@ -543,9 +545,15 @@ footer p {
     -webkit-tap-highlight-color: transparent;
 }
 
+.tetris-game .tetris-touch-controls button:hover,
+.tetris-game .tetris-touch-controls button:focus-visible {
+    background: #c9d0d8;
+    color: black;
+}
+
 .tetris-game .tetris-touch-controls button:active {
-    background: black;
-    color: white;
+    background: #bcc5cf;
+    color: black;
 }
 
 .tetris-game .tetris-touch-controls .touch-drop {
@@ -576,6 +584,12 @@ footer p {
 
 .score-submission[hidden] {
     display: none;
+}
+
+.tetris-game .score-submission {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
 }
 
 .score-submission h3,
@@ -613,15 +627,15 @@ footer p {
     padding: 8px 14px;
     border: none;
     border-radius: 5px;
-    background: lightgray;
+    background: #dfe3e8;
     color: black;
     cursor: pointer;
 }
 
 .score-submit-controls button:hover,
 .score-submit-controls button:focus-visible {
-    background: black;
-    color: white;
+    background: #c9d0d8;
+    color: black;
 }
 
 .score-submit-controls button:disabled {

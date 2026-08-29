@@ -60,13 +60,13 @@
   }
 
   function drawBoard() {
-    ctx.fillStyle = "white";
+    ctx.fillStyle = "#fbfaf6";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     drawFood();
     drawSnake();
 
     if (isGameOver) {
-      ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
+      ctx.fillStyle = "rgba(251, 250, 246, 0.92)";
       ctx.fillRect(0, 160, canvas.width, 80);
       ctx.fillStyle = "#292622";
       ctx.font = '26px "辰宇落雁體", serif';

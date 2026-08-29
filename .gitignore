@@ -11,3 +11,12 @@
 /2021-1月(看星星).jpg
 /2021-1月(猴類危機).jpg
 /2021-1月(你的目標).jpg
+
+# Local dependencies, Wrangler state, and development secrets.
+node_modules/
+.wrangler/
+.dev.vars
+.env
+.env.*
+!.env.example
+!.dev.vars.example

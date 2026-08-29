@@ -55,6 +55,12 @@
       this.spawnPiece();
       this.updateUI();
       this.draw();
+      if (document.fonts) {
+        document.fonts.ready.then(() => {
+          this.draw();
+          this.drawNext();
+        });
+      }
       this.loop = this.loop.bind(this);
       this.animationFrame = requestAnimationFrame(this.loop);
     }
@@ -334,7 +340,7 @@
     }
 
     drawGrid() {
-      this.ctx.strokeStyle = "#e6e1d9";
+      this.ctx.strokeStyle = "#f0ede8";
       this.ctx.lineWidth = 1;
       for (let x = 1; x < COLS; x += 1) {
         this.ctx.beginPath();
@@ -355,9 +361,9 @@
       this.ctx.fillRect(0, 245, this.canvas.width, 110);
       this.ctx.fillStyle = "#292622";
       this.ctx.textAlign = "center";
-      this.ctx.font = "26px Georgia, serif";
+      this.ctx.font = '22px "辰宇落雁體", serif';
       this.ctx.fillText(title, this.canvas.width / 2, 290);
-      this.ctx.font = "16px serif";
+      this.ctx.font = '15px "辰宇落雁體", serif';
       this.ctx.fillText(subtitle, this.canvas.width / 2, 321);
     }
 

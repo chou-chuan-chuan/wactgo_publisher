@@ -124,23 +124,21 @@
 
 
         <!-- Game Zone -->
-        <section class="game-card snake-game" id="snakeGame" tabindex="0" aria-labelledby="snakeTitle">
-            <div class="game-heading">
-                <p class="game-kicker">GAME 01</p>
-                <h2 class="game-title" id="snakeTitle">SNAKE</h2>
-                <p class="game-focus-hint">點擊遊戲區後使用方向鍵</p>
-            </div>
-            <p class="game-stats" id="scoreBoard" aria-live="polite">分數：0 &emsp; 最高分：0</p>
-            <canvas class="game-canvas snake-canvas" id="gameCanvas" width="400" height="400" aria-label="貪吃蛇遊戲棋盤"></canvas>
-            <p class="game-instructions">方向鍵移動・手機可在棋盤上滑動</p>
-            <button class="game-button" id="restartButton" type="button">再玩一次</button>
-        </section>
+        <div class="snake-section-heading">
+            <p class="snake-game-index">GAME 01</p>
+            <h2 class="snake-game-title" id="snakeTitle">SNAKE</h2>
+        </div>
 
-        <section class="game-card tetris-game" id="tetrisGame" tabindex="0" aria-labelledby="tetrisTitle">
-            <div class="game-heading">
-                <p class="game-kicker">GAME 02</p>
-                <h2 class="game-title" id="tetrisTitle">TETRIS</h2>
-                <p class="game-focus-hint">點擊遊戲區後使用鍵盤</p>
+        <div class="game-wrapper" id="snakeGame" tabindex="0" aria-labelledby="snakeTitle">
+            <h2 id="scoreBoard" aria-live="polite">分數：0 &emsp; 最高分：0</h2>
+            <canvas id="gameCanvas" width="400" height="400" aria-label="貪吃蛇遊戲棋盤"></canvas>
+            <button id="restartButton" type="button">再玩一次</button>
+        </div>
+
+        <section class="tetris-game" id="tetrisGame" tabindex="0" aria-labelledby="tetrisTitle">
+            <div class="tetris-heading">
+                <p class="tetris-game-index">GAME 02</p>
+                <h2 class="tetris-title" id="tetrisTitle">TETRIS</h2>
             </div>
 
             <div class="tetris-layout">
@@ -158,8 +156,10 @@
                         <div><dt>LINES</dt><dd id="tetrisLines">0</dd></div>
                         <div><dt>LEVEL</dt><dd id="tetrisLevel">1</dd></div>
                     </dl>
-                    <button class="game-button" id="tetrisPauseButton" type="button">暫停</button>
-                    <button class="game-button game-button-dark" id="tetrisRestartButton" type="button">開始遊戲</button>
+                    <div class="tetris-actions">
+                        <button class="tetris-button" id="tetrisPauseButton" type="button">暫停</button>
+                        <button class="tetris-button" id="tetrisRestartButton" type="button">開始遊戲</button>
+                    </div>
                 </aside>
             </div>
 
@@ -171,7 +171,7 @@
                 <button class="touch-drop" type="button" data-tetris-action="drop">DROP</button>
             </div>
 
-            <p class="game-instructions tetris-instructions">
+            <p class="tetris-instructions">
                 ← → 移動・↓ Soft Drop・↑ / X 順時針旋轉・Z 逆時針旋轉・Space Hard Drop・P 暫停
             </p>
         </section>

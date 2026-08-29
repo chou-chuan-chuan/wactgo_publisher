@@ -53,26 +53,26 @@
   }
 
   function drawSnake() {
-    ctx.fillStyle = "#d18442";
+    ctx.fillStyle = "orange";
     snake.forEach(segment => {
       ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize, gridSize);
     });
   }
 
   function drawBoard() {
-    ctx.fillStyle = "#fbfaf6";
+    ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     drawFood();
     drawSnake();
 
     if (isGameOver) {
-      ctx.fillStyle = "rgba(251, 250, 246, 0.9)";
+      ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
       ctx.fillRect(0, 160, canvas.width, 80);
       ctx.fillStyle = "#292622";
-      ctx.font = "30px serif";
+      ctx.font = '26px "辰宇落雁體", serif';
       ctx.textAlign = "center";
       ctx.fillText("GAME OVER", canvas.width / 2, 198);
-      ctx.font = "18px serif";
+      ctx.font = '16px "辰宇落雁體", serif';
       ctx.fillText("按「再玩一次」重新開始", canvas.width / 2, 224);
     }
 
@@ -197,6 +197,10 @@
 
   restartButton.addEventListener("click", restartGame);
   foodImg.addEventListener("load", drawBoard);
+
+  if (document.fonts) {
+    document.fonts.ready.then(drawBoard);
+  }
 
   resetGame();
   gameInterval = setInterval(drawGame, 120);

@@ -4,6 +4,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="wactgo-leaderboard-api" content="">
     <title>WAO出版社 : TEAM</title>
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="stylesheet" href="styles.css">
@@ -133,6 +134,18 @@
             <h2 id="scoreBoard" aria-live="polite">分數：0 &emsp; 最高分：0</h2>
             <canvas id="gameCanvas" width="400" height="400" aria-label="貪吃蛇遊戲棋盤"></canvas>
             <button id="restartButton" type="button">再玩一次</button>
+            <section class="score-submission" data-score-submission="snake" aria-labelledby="snakeSubmissionTitle" hidden>
+                <h3 id="snakeSubmissionTitle">留下名字登上排行榜</h3>
+                <p>你的分數：<strong data-final-score>0</strong></p>
+                <form data-score-form novalidate>
+                    <label for="snakePlayerName">你的名字</label>
+                    <div class="score-submit-controls">
+                        <input id="snakePlayerName" name="displayName" type="text" maxlength="20" autocomplete="nickname" required>
+                        <button type="submit">送出分數</button>
+                    </div>
+                    <p class="score-submit-status" data-submit-status aria-live="polite"></p>
+                </form>
+            </section>
         </div>
 
         <section class="tetris-game" id="tetrisGame" tabindex="0" aria-labelledby="tetrisTitle">
@@ -174,6 +187,37 @@
             <p class="tetris-instructions">
                 ← → 移動・↓ Soft Drop・↑ / X 順時針旋轉・Z 逆時針旋轉・Space Hard Drop・P 暫停
             </p>
+
+            <section class="score-submission" data-score-submission="tetris" aria-labelledby="tetrisSubmissionTitle" hidden>
+                <h3 id="tetrisSubmissionTitle">留下名字登上排行榜</h3>
+                <p>你的分數：<strong data-final-score>0</strong></p>
+                <form data-score-form novalidate>
+                    <label for="tetrisPlayerName">你的名字</label>
+                    <div class="score-submit-controls">
+                        <input id="tetrisPlayerName" name="displayName" type="text" maxlength="20" autocomplete="nickname" required>
+                        <button type="submit">送出分數</button>
+                    </div>
+                    <p class="score-submit-status" data-submit-status aria-live="polite"></p>
+                </form>
+            </section>
+        </section>
+
+        <section class="leaderboard-section" aria-labelledby="leaderboardTitle">
+            <p class="leaderboard-index">LEADERBOARD</p>
+            <h2 id="leaderboardTitle">排行榜</h2>
+            <div class="leaderboard-switch" role="group" aria-label="選擇遊戲排行榜">
+                <button type="button" data-leaderboard-game="snake" aria-pressed="true">SNAKE</button>
+                <button type="button" data-leaderboard-game="tetris" aria-pressed="false">TETRIS</button>
+            </div>
+            <p class="leaderboard-state" id="leaderboardState" aria-live="polite">讀取排行榜中...</p>
+            <div class="leaderboard-table-wrap" id="leaderboardTable" hidden>
+                <table>
+                    <thead>
+                        <tr><th scope="col">排名</th><th scope="col">玩家</th><th scope="col">分數</th></tr>
+                    </thead>
+                    <tbody id="leaderboardRows"></tbody>
+                </table>
+            </div>
         </section>
         <!-- Game Zone -->
 
@@ -184,6 +228,7 @@
         <p>Copyright 2025 — WACTGO 出版社 &emsp; © All rights reserved.</p>
     </footer>
 
+    <script src="leaderboard.js"></script>
     <script src="script.js"></script>
     <script src="tetris.js"></script>
     <script src="motion.js"></script>

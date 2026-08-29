@@ -107,6 +107,7 @@
       updateScore();
       clearInterval(gameInterval);
       drawBoard();
+      window.WactgoLeaderboard?.showScoreSubmission("snake", score);
       return;
     }
 
@@ -133,6 +134,7 @@
 
   function restartGame() {
     clearInterval(gameInterval);
+    window.WactgoLeaderboard?.hideScoreSubmission("snake");
     resetGame();
     gameInterval = setInterval(drawGame, 120);
     game.focus({ preventScroll: true });

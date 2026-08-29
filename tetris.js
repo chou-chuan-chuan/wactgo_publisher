@@ -47,6 +47,7 @@
       this.lines = 0;
       this.level = 1;
       this.state = "ready";
+      this.gameOverNotified = false;
       this.dropCounter = 0;
       this.lastTime = 0;
       this.animationFrame = null;
@@ -100,6 +101,12 @@
       if (this.collides(this.current.matrix, this.current.x, this.current.y)) {
         this.state = "over";
         this.updateUI();
+        if (!this.gameOverNotified) {
+          this.gameOverNotified = true;
+          if (typeof window !== "undefined") {
+            window.WactgoLeaderboard?.showScoreSubmission("tetris", this.score);
+          }
+        }
       }
     }
 
@@ -214,6 +221,9 @@
     }
 
     restart() {
+      if (typeof window !== "undefined") {
+        window.WactgoLeaderboard?.hideScoreSubmission("tetris");
+      }
       this.board = this.createBoard();
       this.bag = [];
       this.nextType = this.takeFromBag();
@@ -221,6 +231,7 @@
       this.lines = 0;
       this.level = 1;
       this.state = "running";
+      this.gameOverNotified = false;
       this.dropCounter = 0;
       this.lastTime = performance.now();
       this.spawnPiece();

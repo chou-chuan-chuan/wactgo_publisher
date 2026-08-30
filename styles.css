@@ -28,7 +28,7 @@ html, body {
 
 /* ================= Header 樣式 ================= */
 header {
-    background: url('奧地利克雷姆斯明斯特修道院圖書館.jpg') center/cover no-repeat;
+    background: url('assets/images/site/奧地利克雷姆斯明斯特修道院圖書館.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
     position: relative;
@@ -135,7 +135,7 @@ main {
 
 /* ================= Footer ================= */
 footer {
-    background: url('奧地利克雷姆斯明斯特修道院圖書館2.jpg') center/cover no-repeat;
+    background: url('assets/images/site/奧地利克雷姆斯明斯特修道院圖書館2.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
     padding: 1px;

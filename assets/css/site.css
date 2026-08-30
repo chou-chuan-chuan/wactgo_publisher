@@ -1,7 +1,7 @@
 /* ================= 全局設定 ================= */
 @font-face {
   font-family: '辰宇落雁體';
-  src: url('ChenYuluoyan-2.0-Thin.ttf'); 
+  src: url('../fonts/ChenYuluoyan-2.0-Thin.ttf');
   font-display: swap;
 }
 
@@ -28,7 +28,7 @@ html, body {
 
 /* ================= Header 樣式 ================= */
 header {
-    background: url('assets/images/site/奧地利克雷姆斯明斯特修道院圖書館.jpg') center/cover no-repeat;
+    background: url('../images/site/奧地利克雷姆斯明斯特修道院圖書館.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
     position: relative;
@@ -135,7 +135,7 @@ main {
 
 /* ================= Footer ================= */
 footer {
-    background: url('assets/images/site/奧地利克雷姆斯明斯特修道院圖書館2.jpg') center/cover no-repeat;
+    background: url('../images/site/奧地利克雷姆斯明斯特修道院圖書館2.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
     padding: 1px;

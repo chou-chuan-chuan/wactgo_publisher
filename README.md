@@ -17,7 +17,10 @@ Periodicals source JPG files do not belong in the repository current tree. Produ
 ```text
 /
 ├── HTML pages
-├── frontend assets (currently at the repository root)
+├── assets/
+│   ├── css/
+│   ├── fonts/
+│   └── images/
 ├── workers/
 │   ├── leaderboard/
 │   └── media/
@@ -25,7 +28,7 @@ Periodicals source JPG files do not belong in the repository current tree. Produ
 └── README.md
 ```
 
-Frontend assets have not been restructured in this phase. Any asset relocation will be handled in separate future pull requests.
+Frontend assets are being incrementally organized under `assets/`.
 
 ## Local development
 

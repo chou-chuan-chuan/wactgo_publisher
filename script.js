@@ -12,7 +12,7 @@
   const gridSize = 20;
   const tileCount = canvas.width / gridSize;
   const foodImg = new Image();
-  foodImg.src = "c.jpg";
+  foodImg.src = "assets/images/games/c.jpg";
 
   let snake;
   let velocity;

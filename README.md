@@ -19,6 +19,9 @@ Periodicals source JPG files do not belong in the repository current tree. Produ
 ├── HTML pages
 ├── assets/
 │   ├── css/
+│   │   ├── site.css
+│   │   ├── team-games.css
+│   │   └── guitar.css
 │   ├── fonts/
 │   ├── js/
 │   │   └── team/

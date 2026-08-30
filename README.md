@@ -20,6 +20,13 @@ Periodicals source JPG files do not belong in the repository current tree. Produ
 ├── assets/
 │   ├── css/
 │   ├── fonts/
+│   ├── js/
+│   │   └── team/
+│   │       ├── leaderboard.js
+│   │       ├── motion.js
+│   │       └── games/
+│   │           ├── snake.js
+│   │           └── tetris.js
 │   └── images/
 ├── workers/
 │   ├── leaderboard/

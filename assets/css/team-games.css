@@ -438,6 +438,24 @@
 }
 
 @media (max-width: 768px) {
+    .circle-gallery {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        justify-items: center;
+        width: 100%;
+    }
+
+    .circle {
+        width: 100%;
+        max-width: 3.93rem;
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    .organization-name-zh {
+        display: block;
+    }
+
     .snake-section-heading {
         box-sizing: border-box;
         width: 100%;

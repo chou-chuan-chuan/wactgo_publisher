@@ -252,6 +252,9 @@ footer p {
     line-height: 1;
     color: black;
 }
+.periodicals-page .text-container p {
+    text-align: justify;
+}
 .text-container p em { font-style: italic; color: #444; }
 .text-container p u { text-decoration: underline; color: #333; }
 
@@ -259,10 +262,12 @@ footer p {
 .literature-container {
     font-family: '辰宇落雁體', serif;
     font-size: 2rem;
+    text-align: justify;
 }
 .novels-container {
     font-family: '辰宇落雁體', serif;
     font-size: 1.3rem;
+    text-align: justify;
 }
 
 /* ================= 圖片相關 ================= */
@@ -306,6 +311,18 @@ footer p {
         width: 100%;
         padding: 10px 15px;
         max-width: 100%;
+    }
+
+    .literature-container {
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 1.15rem;
+    }
+
+    .novels-container {
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 1.05rem;
     }
 
     nav ul {
